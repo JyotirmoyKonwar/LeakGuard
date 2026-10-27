@@ -1,10 +1,21 @@
-# Python-generated files
 __pycache__/
 *.py[oc]
 build/
 dist/
 wheels/
 *.egg-info
-
-# Virtual environments
 .venv
+.env
+*.db
+*.sqlite
+mlruns/
+mlartifacts/
+models/
+data/raw/
+data/processed/*.jsonl
+!data/processed/.gitkeep
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
