@@ -32,8 +32,8 @@ ml = [
     "transformers>=4.44",
 ]
 ui = ["streamlit>=1.38", "pandas>=2.2", "plotly>=5.22", "requests>=2.32"]
-data = ["faker>=28", "datasets>=2.20", "pandas>=2.2"]
-train = ["mlflow>=2.15", "datasets>=2.20"]
+data = ["datasets>=2.20", "pandas>=2.2"]
+train = ["mlflow>=2.15"]  # experiment tracking for the benchmark
 dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.6", "mypy>=1.11", "types-PyYAML", "types-requests"]
 
 [build-system]

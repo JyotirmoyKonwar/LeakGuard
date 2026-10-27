@@ -1,0 +1,141 @@
+# LeakGuard default policy (policy-as-code).
+# Action strictness: allow < redact < escalate < block
+# hard: true  -> a floor no model (Laya) or precedent can loosen.
+# Every decision cites the rule IDs that fired; the benchmark checks citations are valid ("groundedness").
+# Intent rules (INT-*) apply to natural-language prompts only: injection/exfiltration are properties of a request
+# to an assistant, and zero-shot intent scores on code/config/logs are unreliable (see docs/report.md 4.3).
+# Exfiltration rules also require the deterministic `bulk_request` cue (all/every/export/dump...) as corroboration.
+name: default
+version: 5
+description: Baseline enterprise DLP policy for LLM prompts, responses and agent tool calls.
+
+settings:  # INT thresholds calibrated on dev (eval/calibrate.py): FBR 2.9%, injection recall 0.75
+  bulk_pii_threshold: 8          # this many PII values in one message looks like a data dump
+  exfiltration_block: 0.98       # Laya probability thresholds
+  exfiltration_escalate: 0.95
+  injection_block: 0.98
+  injection_escalate: 0.95
+
+rules:
+  # ---------------------------------------------------------------- secrets
+  - id: SEC-001
+    description: Private keys and database credentials must never leave the organisation, in any direction.
+    match: {entities: [PRIVATE_KEY, DB_CONNECTION_STRING]}
+    action: block
+    hard: true
+
+  - id: SEC-002
+    description: Cloud, SaaS and API credentials in a prompt are replaced by placeholders before reaching any LLM; the raw value never leaves.
+    match: {category: secret, directions: [prompt]}
+    action: redact
+    hard: true
+
+  - id: SEC-003
+    description: A model response that contains a credential is blocked (memorised or tool-sourced secret leakage).
+    match: {category: secret, directions: [response]}
+    action: block
+    hard: true
+
+  - id: SEC-004
+    description: Tool calls must not carry credentials to external destinations.
+    match: {category: secret, directions: [tool_payload], destinations: [external]}
+    action: block
+    hard: true
+
+  - id: SEC-005
+    description: Credentials in tool calls to internal systems are masked and the call is reviewed.
+    match: {category: secret, directions: [tool_payload], destinations: [internal]}
+    action: escalate
+
+  # ---------------------------------------------------------------- personal data
+  - id: PII-001
+    description: Government IDs and financial identifiers (Aadhaar, PAN, SSN, passport, card, bank account, IBAN) are pseudonymised before reaching an external LLM.
+    match: {entities: [AADHAAR, PAN, SSN, GOV_ID, PASSPORT, CREDIT_CARD, BANK_ACCOUNT, IBAN, DATE_OF_BIRTH], directions: [prompt], destinations: [external]}
+    action: redact
+    hard: true
+
+  - id: PII-002
+    description: Contact details and names are pseudonymised for external LLMs; the response is re-hydrated for the user.
+    match: {entities: [EMAIL, PHONE, PERSON, ADDRESS, USERNAME, IP_ADDRESS], directions: [prompt], destinations: [external]}
+    action: redact
+
+  - id: PII-003
+    description: Low-risk contact details may be sent to the internally hosted LLM by employees.
+    match: {entities: [EMAIL, PHONE, PERSON, USERNAME, IP_ADDRESS], directions: [prompt], destinations: [internal], roles: [employee, admin, security]}
+    action: allow
+
+  - id: PII-004
+    description: High-risk identifiers stay pseudonymised even for the internal LLM.
+    match: {entities: [AADHAAR, SSN, GOV_ID, PASSPORT, CREDIT_CARD, BANK_ACCOUNT, IBAN, DATE_OF_BIRTH], directions: [prompt], destinations: [internal]}
+    action: redact
+    hard: true
+
+  - id: PII-005
+    description: Bulk personal data in a single message (possible dump) needs human review.
+    match: {category: pii, min_count_setting: bulk_pii_threshold}
+    action: escalate
+
+  - id: PII-006
+    description: Personal data in a model response that the user did not supply is redacted before it reaches the user.
+    match: {category: pii, directions: [response], origin: new}
+    action: redact
+
+  - id: PII-007
+    description: High-risk identifiers must not be sent by tools to external destinations.
+    match: {category: pii, min_severity: 3, directions: [tool_payload], destinations: [external]}
+    action: block
+    hard: true
+
+  - id: PII-008
+    description: Contact details sent by tools to external destinations need human approval.
+    match: {category: pii, max_severity: 2, directions: [tool_payload], destinations: [external]}
+    action: escalate
+
+  - id: PII-010
+    description: Contact details may flow to internal systems through tools (CRM, ticketing).
+    match: {category: pii, max_severity: 2, directions: [tool_payload], destinations: [internal]}
+    action: allow
+
+  - id: PII-011
+    description: High-risk identifiers in tool calls to internal systems are masked.
+    match: {category: pii, min_severity: 3, directions: [tool_payload], destinations: [internal]}
+    action: redact
+
+  - id: PII-009
+    description: Contractors may not send any personal data to an LLM.
+    match: {category: pii, roles: [contractor], directions: [prompt]}
+    action: block
+
+  # ---------------------------------------------------------------- intent (from Laya)
+  - id: INT-001
+    description: Requests to extract or export bulk sensitive data are blocked.
+    match: {directions: [prompt], text_kinds: [prose], requires_signals: [bulk_request], intent: exfiltration, min_prob_setting: exfiltration_block}
+    action: block
+    hard: true
+
+  - id: INT-002
+    description: Possible exfiltration attempts are escalated to a reviewer.
+    match: {directions: [prompt], text_kinds: [prose], requires_signals: [bulk_request], intent: exfiltration, min_prob_setting: exfiltration_escalate}
+    action: escalate
+
+  - id: INT-003
+    description: Prompt-injection or jailbreak content is blocked.
+    match: {directions: [prompt], text_kinds: [prose], intent: injection, min_prob_setting: injection_block}
+    action: block
+    hard: true
+
+  - id: INT-004
+    description: Suspected prompt injection or jailbreak (gray band) is escalated to a reviewer.
+    match: {directions: [prompt], text_kinds: [prose], intent: injection, min_prob_setting: injection_escalate}
+    action: escalate
+
+  - id: RESP-001
+    description: Responses that reveal the system prompt or internal policy text are blocked.
+    match: {signal: system_prompt_leak, directions: [response]}
+    action: block
+    hard: true
+
+  - id: DEF-001
+    description: No sensitive data or risky intent detected; the request is allowed.
+    match: {default: true}
+    action: allow

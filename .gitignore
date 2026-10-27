@@ -19,3 +19,7 @@ data/processed/*.jsonl
 .mypy_cache/
 .coverage
 htmlcov/
+*.db-wal
+*.db-shm
+eval/results/**/*.jsonl
+eval/results/*.jsonl
