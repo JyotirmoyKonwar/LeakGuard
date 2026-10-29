@@ -1,0 +1,58 @@
+name: ci
+on:
+  push: {branches: [main]}
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      LG_USE_GLINER: "false"
+      LG_USE_LAYA: "false"
+      LG_LLM_PROVIDER: mock
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with: {version: "0.10.10", enable-cache: true}
+      - run: uv python install 3.12
+      # CI never downloads model weights: rules-only detection + MockLaya + MockLLM
+      - run: uv sync --frozen --extra dev --extra ui
+      - name: lint
+        run: uv run ruff check src tests ui migrations
+      - name: types
+        run: uv run mypy
+      - name: tests
+        run: uv run pytest --cov=leakguard --cov-report=term-missing:skip-covered
+      - name: migrations apply on a fresh DB
+        run: LG_DATABASE_URL=sqlite:///ci.db uv run alembic upgrade head
+
+  postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env: {POSTGRES_USER: lg, POSTGRES_PASSWORD: lg, POSTGRES_DB: lg}
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 5s --health-retries 10
+    env:
+      LG_DATABASE_URL: postgresql+psycopg://lg:lg@localhost:5432/lg
+      LG_USE_GLINER: "false"
+      LG_USE_LAYA: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with: {version: "0.10.10", enable-cache: true}
+      - run: uv sync --frozen --extra dev
+      - run: uv run alembic upgrade head
+      - run: uv run pytest tests/api tests/guardrails -q
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - name: build api image (no weight preload in CI)
+        uses: docker/build-push-action@v6
+        with: {context: ., file: deploy/Dockerfile, target: api, push: false, build-args: "PRELOAD=0",
+               cache-from: type=gha, cache-to: "type=gha,mode=max"}

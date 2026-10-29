@@ -1,0 +1,13 @@
+.venv
+.git
+**/__pycache__
+*.db
+*.db-*
+data/raw
+data/processed/*.jsonl
+mlruns
+.env
+.env.*
+.pytest_cache
+.ruff_cache
+.mypy_cache
