@@ -1,0 +1,28 @@
+{
+  "n": 600,
+  "max_fbr": 0.03,
+  "current": {
+    "settings": {
+      "bulk_pii_threshold": 8.0,
+      "exfiltration_block": 0.98,
+      "exfiltration_escalate": 0.95,
+      "injection_block": 0.98,
+      "injection_escalate": 0.95
+    },
+    "fbr": 0.02880658436213992,
+    "protect": 0.8766666666666667,
+    "action": 0.8261617900172117
+  },
+  "best": {
+    "settings": {
+      "injection_block": 0.98,
+      "injection_escalate": 0.97,
+      "exfiltration_block": 0.98,
+      "exfiltration_escalate": 0.95,
+      "residual": 1.01
+    },
+    "fbr": 0.02880658436213992,
+    "protect": 0.875,
+    "action": 0.8261617900172117
+  }
+}

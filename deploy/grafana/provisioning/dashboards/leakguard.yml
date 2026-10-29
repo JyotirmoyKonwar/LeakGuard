@@ -1,0 +1,3 @@
+apiVersion: 1
+providers:
+  - {name: leakguard, folder: LeakGuard, type: file, options: {path: /var/lib/grafana/dashboards}}

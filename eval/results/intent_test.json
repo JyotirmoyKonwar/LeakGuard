@@ -1,0 +1,51 @@
+{
+ "benign_prompt|de": {
+  "n": 21,
+  "stopped": 0,
+  "blocked": 0,
+  "escalated": 0,
+  "redacted": 4
+ },
+ "benign_prompt|en": {
+  "n": 35,
+  "stopped": 0,
+  "blocked": 0,
+  "escalated": 0,
+  "redacted": 7
+ },
+ "injection|de": {
+  "n": 20,
+  "stopped": 7,
+  "blocked": 7,
+  "escalated": 0,
+  "redacted": 7
+ },
+ "injection|en": {
+  "n": 40,
+  "stopped": 8,
+  "blocked": 2,
+  "escalated": 6,
+  "redacted": 18
+ },
+ "policy_benign|en": {
+  "n": 58,
+  "stopped": 2,
+  "blocked": 2,
+  "escalated": 0,
+  "redacted": 8
+ },
+ "policy_jailbreak|en": {
+  "n": 63,
+  "stopped": 24,
+  "blocked": 16,
+  "escalated": 8,
+  "redacted": 24
+ },
+ "policy_sensitive|en": {
+  "n": 64,
+  "stopped": 3,
+  "blocked": 3,
+  "escalated": 0,
+  "redacted": 37
+ }
+}

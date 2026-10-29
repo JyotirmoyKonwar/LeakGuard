@@ -1,0 +1,2397 @@
+{
+  "split": "test",
+  "n_total": 2889,
+  "systems": {
+    "rules": {
+      "n": 2889,
+      "leakage_recall": 0.2716,
+      "items_with_leak": 1049,
+      "detection_precision": 0.7129,
+      "detection_recall": 0.2749,
+      "false_block_rate": 0.0169,
+      "over_redaction_rate": 0.0549,
+      "action_accuracy": 0.6087,
+      "protect_accuracy": 0.604,
+      "escalation_rate": 0.0055,
+      "stop_rate": 0.0813,
+      "latency_ms_p50": 0.19,
+      "latency_ms_p95": 0.48,
+      "latency_ms_p99": 1.36,
+      "latency_ms_mean": 0.23,
+      "detection_f1": 0.3968,
+      "groundedness": 1.0,
+      "confusion": {
+        "allow": {
+          "allow": 1098,
+          "redact": 65,
+          "escalate": 1,
+          "block": 19
+        },
+        "redact": {
+          "allow": 846,
+          "redact": 414,
+          "escalate": 0,
+          "block": 1
+        },
+        "escalate": {
+          "allow": 0,
+          "redact": 0,
+          "escalate": 0,
+          "block": 0
+        },
+        "block": {
+          "allow": 162,
+          "redact": 1,
+          "escalate": 3,
+          "block": 196
+        }
+      },
+      "by_scenario": {
+        "benign_prompt": {
+          "n": 56,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0,
+          "action_accuracy": 1.0,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.11
+        },
+        "code_api_key": {
+          "n": 23,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.8261,
+          "protect_accuracy": 0.8261,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.8261,
+          "latency_ms_p50": 0.26
+        },
+        "code_connection_string": {
+          "n": 21,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.619,
+          "protect_accuracy": 0.619,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.619,
+          "latency_ms_p50": 0.23
+        },
+        "code_internal_url": {
+          "n": 12,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0,
+          "action_accuracy": 1.0,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.15
+        },
+        "code_multi_secret": {
+          "n": 19,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.8421,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 0.1579,
+          "stop_rate": 1.0,
+          "latency_ms_p50": 0.57
+        },
+        "code_password_secret": {
+          "n": 23,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.7391,
+          "protect_accuracy": 0.7391,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.7391,
+          "latency_ms_p50": 0.21
+        },
+        "code_pii": {
+          "n": 19,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": null,
+          "protect_accuracy": 0.6316,
+          "escalation_rate": 0.6316,
+          "stop_rate": 0.6316,
+          "latency_ms_p50": 0.2
+        },
+        "code_private_key_keystore": {
+          "n": 12,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.3333,
+          "protect_accuracy": 0.3333,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.3333,
+          "latency_ms_p50": 0.26
+        },
+        "injection": {
+          "n": 60,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.0,
+          "protect_accuracy": 0.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.23
+        },
+        "negative_prompt": {
+          "n": 627,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8979,
+          "protect_accuracy": 0.8979,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.14
+        },
+        "negative_response": {
+          "n": 75,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0667,
+          "action_accuracy": 0.92,
+          "protect_accuracy": 0.92,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0667,
+          "latency_ms_p50": 0.13
+        },
+        "negative_tool_external": {
+          "n": 125,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.12,
+          "action_accuracy": 0.88,
+          "protect_accuracy": 0.88,
+          "escalation_rate": 0.008,
+          "stop_rate": 0.12,
+          "latency_ms_p50": 0.14
+        },
+        "pii_internal_llm": {
+          "n": 122,
+          "leakage_recall": 0.006,
+          "detection_recall": 0.1437,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.7951,
+          "protect_accuracy": 0.7951,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.23
+        },
+        "pii_prompt": {
+          "n": 931,
+          "leakage_recall": 0.1088,
+          "detection_recall": 0.1019,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.2632,
+          "protect_accuracy": 0.2632,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.21
+        },
+        "pii_response": {
+          "n": 155,
+          "leakage_recall": 0.1228,
+          "detection_recall": 0.1184,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.2581,
+          "protect_accuracy": 0.2581,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.22
+        },
+        "policy_benign": {
+          "n": 58,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0,
+          "action_accuracy": 1.0,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.14
+        },
+        "policy_jailbreak": {
+          "n": 63,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.0,
+          "protect_accuracy": 0.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.18
+        },
+        "policy_sensitive": {
+          "n": 64,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": null,
+          "protect_accuracy": 0.3125,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0469,
+          "latency_ms_p50": 0.13
+        },
+        "secret_prompt": {
+          "n": 311,
+          "leakage_recall": 0.9091,
+          "detection_recall": 0.9003,
+          "false_block_rate": null,
+          "action_accuracy": 0.9325,
+          "protect_accuracy": 0.9357,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0932,
+          "latency_ms_p50": 0.26
+        },
+        "secret_response": {
+          "n": 49,
+          "leakage_recall": 0.8077,
+          "detection_recall": 0.7692,
+          "false_block_rate": null,
+          "action_accuracy": 0.7959,
+          "protect_accuracy": 0.8163,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.7959,
+          "latency_ms_p50": 0.24
+        },
+        "secret_tool_external": {
+          "n": 64,
+          "leakage_recall": 0.9394,
+          "detection_recall": 0.9242,
+          "false_block_rate": null,
+          "action_accuracy": 0.9375,
+          "protect_accuracy": 0.9375,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.9375,
+          "latency_ms_p50": 0.24
+        }
+      },
+      "by_lang": {
+        "de": {
+          "n": 266,
+          "leakage_recall": 0.1016,
+          "detection_recall": 0.1115,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.3308,
+          "protect_accuracy": 0.3308,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.21
+        },
+        "en": {
+          "n": 1875,
+          "leakage_recall": 0.5518,
+          "detection_recall": 0.5493,
+          "false_block_rate": 0.0206,
+          "action_accuracy": 0.7651,
+          "protect_accuracy": 0.7509,
+          "escalation_rate": 0.0085,
+          "stop_rate": 0.1253,
+          "latency_ms_p50": 0.17
+        },
+        "es": {
+          "n": 195,
+          "leakage_recall": 0.1245,
+          "detection_recall": 0.1321,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.359,
+          "protect_accuracy": 0.359,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.22
+        },
+        "fr": {
+          "n": 186,
+          "leakage_recall": 0.1124,
+          "detection_recall": 0.1285,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.371,
+          "protect_accuracy": 0.371,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.24
+        },
+        "hi": {
+          "n": 74,
+          "leakage_recall": 0.0917,
+          "detection_recall": 0.0917,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.3378,
+          "protect_accuracy": 0.3378,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.22
+        },
+        "it": {
+          "n": 154,
+          "leakage_recall": 0.1226,
+          "detection_recall": 0.1274,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.3117,
+          "protect_accuracy": 0.3117,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.23
+        },
+        "nl": {
+          "n": 64,
+          "leakage_recall": 0.0707,
+          "detection_recall": 0.0505,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.25,
+          "protect_accuracy": 0.25,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.2
+        },
+        "te": {
+          "n": 75,
+          "leakage_recall": 0.0636,
+          "detection_recall": 0.0727,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.28,
+          "protect_accuracy": 0.28,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 0.2
+        }
+      },
+      "by_direction": {
+        "prompt": {
+          "n": 2292,
+          "leakage_recall": 0.2506,
+          "detection_recall": 0.2567,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.5875,
+          "protect_accuracy": 0.5803,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.014,
+          "latency_ms_p50": 0.19
+        },
+        "response": {
+          "n": 279,
+          "leakage_recall": 0.25,
+          "detection_recall": 0.2393,
+          "false_block_rate": 0.0556,
+          "action_accuracy": 0.5305,
+          "protect_accuracy": 0.5341,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.1577,
+          "latency_ms_p50": 0.2
+        },
+        "tool_payload": {
+          "n": 318,
+          "leakage_recall": 0.9394,
+          "detection_recall": 0.9242,
+          "false_block_rate": 0.1095,
+          "action_accuracy": 0.8395,
+          "protect_accuracy": 0.8365,
+          "escalation_rate": 0.0503,
+          "stop_rate": 0.5,
+          "latency_ms_p50": 0.2
+        }
+      },
+      "entity_recall": {
+        "PERSON": {
+          "n": 980,
+          "recall": 0.001
+        },
+        "GOV_ID": {
+          "n": 193,
+          "recall": 0.0674
+        },
+        "PHONE": {
+          "n": 160,
+          "recall": 0.1562
+        },
+        "ADDRESS": {
+          "n": 151,
+          "recall": 0.0596
+        },
+        "EMAIL": {
+          "n": 137,
+          "recall": 0.8759
+        },
+        "PASSPORT": {
+          "n": 42,
+          "recall": 0.0
+        },
+        "GITHUB_TOKEN": {
+          "n": 37,
+          "recall": 0.973
+        },
+        "GENERIC_SECRET": {
+          "n": 35,
+          "recall": 0.3714
+        },
+        "PRIVATE_KEY": {
+          "n": 30,
+          "recall": 1.0
+        },
+        "CREDIT_CARD": {
+          "n": 28,
+          "recall": 0.0714
+        },
+        "TELEGRAM_TOKEN": {
+          "n": 23,
+          "recall": 1.0
+        },
+        "DISCORD_TOKEN": {
+          "n": 21,
+          "recall": 1.0
+        },
+        "PASSWORD": {
+          "n": 20,
+          "recall": 0.5
+        },
+        "SLACK_WEBHOOK": {
+          "n": 18,
+          "recall": 1.0
+        },
+        "OPENAI_KEY": {
+          "n": 18,
+          "recall": 1.0
+        },
+        "AWS_ACCESS_KEY": {
+          "n": 17,
+          "recall": 1.0
+        },
+        "PYPI_TOKEN": {
+          "n": 17,
+          "recall": 1.0
+        },
+        "HF_TOKEN": {
+          "n": 16,
+          "recall": 1.0
+        },
+        "GITLAB_TOKEN": {
+          "n": 16,
+          "recall": 1.0
+        },
+        "AWS_SECRET_KEY": {
+          "n": 16,
+          "recall": 0.875
+        },
+        "JWT": {
+          "n": 15,
+          "recall": 1.0
+        },
+        "DIGITALOCEAN_TOKEN": {
+          "n": 15,
+          "recall": 1.0
+        },
+        "GCP_API_KEY": {
+          "n": 14,
+          "recall": 1.0
+        },
+        "SENDGRID_KEY": {
+          "n": 14,
+          "recall": 1.0
+        },
+        "SLACK_TOKEN": {
+          "n": 14,
+          "recall": 1.0
+        },
+        "ANTHROPIC_KEY": {
+          "n": 14,
+          "recall": 1.0
+        },
+        "SHOPIFY_TOKEN": {
+          "n": 14,
+          "recall": 1.0
+        },
+        "DATADOG_KEY": {
+          "n": 12,
+          "recall": 0.5833
+        },
+        "TWILIO_KEY": {
+          "n": 12,
+          "recall": 0.5833
+        },
+        "DB_CONNECTION_STRING": {
+          "n": 11,
+          "recall": 1.0
+        },
+        "NPM_TOKEN": {
+          "n": 11,
+          "recall": 1.0
+        },
+        "STRIPE_KEY": {
+          "n": 10,
+          "recall": 1.0
+        },
+        "BASIC_AUTH": {
+          "n": 10,
+          "recall": 1.0
+        },
+        "AZURE_STORAGE_KEY": {
+          "n": 9,
+          "recall": 1.0
+        }
+      },
+      "wall_s": 1.3
+    },
+    "gliner_base": {
+      "n": 2889,
+      "leakage_recall": 0.8065,
+      "items_with_leak": 325,
+      "detection_precision": 0.6586,
+      "detection_recall": 0.8558,
+      "false_block_rate": 0.0313,
+      "over_redaction_rate": 0.1538,
+      "action_accuracy": 0.8421,
+      "protect_accuracy": 0.8633,
+      "escalation_rate": 0.0097,
+      "stop_rate": 0.0973,
+      "latency_ms_p50": 369.22,
+      "latency_ms_p95": 516.64,
+      "latency_ms_p99": 1352.35,
+      "latency_ms_mean": 404.49,
+      "detection_f1": 0.7444,
+      "groundedness": 1.0,
+      "confusion": {
+        "allow": {
+          "allow": 964,
+          "redact": 182,
+          "escalate": 8,
+          "block": 29
+        },
+        "redact": {
+          "allow": 78,
+          "redact": 1180,
+          "escalate": 1,
+          "block": 2
+        },
+        "escalate": {
+          "allow": 0,
+          "redact": 0,
+          "escalate": 0,
+          "block": 0
+        },
+        "block": {
+          "allow": 73,
+          "redact": 69,
+          "escalate": 1,
+          "block": 219
+        }
+      },
+      "by_scenario": {
+        "benign_prompt": {
+          "n": 56,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8036,
+          "protect_accuracy": 0.8036,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 335.87
+        },
+        "code_api_key": {
+          "n": 23,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.8261,
+          "protect_accuracy": 0.8261,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.8261,
+          "latency_ms_p50": 382.53
+        },
+        "code_connection_string": {
+          "n": 21,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.619,
+          "protect_accuracy": 0.619,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.619,
+          "latency_ms_p50": 408.74
+        },
+        "code_internal_url": {
+          "n": 12,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0,
+          "action_accuracy": 1.0,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 385.81
+        },
+        "code_multi_secret": {
+          "n": 19,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 1.0,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 1.0,
+          "latency_ms_p50": 608.42
+        },
+        "code_password_secret": {
+          "n": 23,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 1.0,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 1.0,
+          "latency_ms_p50": 379.76
+        },
+        "code_pii": {
+          "n": 19,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": null,
+          "protect_accuracy": 0.9474,
+          "escalation_rate": 0.9474,
+          "stop_rate": 0.9474,
+          "latency_ms_p50": 377.2
+        },
+        "code_private_key_keystore": {
+          "n": 12,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 1.0,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 1.0,
+          "latency_ms_p50": 446.79
+        },
+        "injection": {
+          "n": 60,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.0,
+          "protect_accuracy": 0.55,
+          "escalation_rate": 0.0167,
+          "stop_rate": 0.0167,
+          "latency_ms_p50": 387.38
+        },
+        "negative_prompt": {
+          "n": 627,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8517,
+          "protect_accuracy": 0.8517,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 352.15
+        },
+        "negative_response": {
+          "n": 75,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.1467,
+          "action_accuracy": 0.8267,
+          "protect_accuracy": 0.8267,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.1467,
+          "latency_ms_p50": 349.94
+        },
+        "negative_tool_external": {
+          "n": 125,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.208,
+          "action_accuracy": 0.792,
+          "protect_accuracy": 0.792,
+          "escalation_rate": 0.064,
+          "stop_rate": 0.208,
+          "latency_ms_p50": 355.14
+        },
+        "pii_internal_llm": {
+          "n": 122,
+          "leakage_recall": 0.1018,
+          "detection_recall": 0.8503,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.7951,
+          "protect_accuracy": 0.7951,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 378.63
+        },
+        "pii_prompt": {
+          "n": 931,
+          "leakage_recall": 0.8488,
+          "detection_recall": 0.8387,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8937,
+          "protect_accuracy": 0.8937,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 376.41
+        },
+        "pii_response": {
+          "n": 155,
+          "leakage_recall": 0.7939,
+          "detection_recall": 0.7851,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.9097,
+          "protect_accuracy": 0.9161,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0065,
+          "latency_ms_p50": 373.18
+        },
+        "policy_benign": {
+          "n": 58,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8621,
+          "protect_accuracy": 0.8621,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 343.32
+        },
+        "policy_jailbreak": {
+          "n": 63,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.0,
+          "protect_accuracy": 0.5714,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 363.62
+        },
+        "policy_sensitive": {
+          "n": 64,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": null,
+          "protect_accuracy": 0.625,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0469,
+          "latency_ms_p50": 340.75
+        },
+        "secret_prompt": {
+          "n": 311,
+          "leakage_recall": 0.9531,
+          "detection_recall": 0.9472,
+          "false_block_rate": null,
+          "action_accuracy": 0.9646,
+          "protect_accuracy": 0.9711,
+          "escalation_rate": 0.0032,
+          "stop_rate": 0.0965,
+          "latency_ms_p50": 382.39
+        },
+        "secret_response": {
+          "n": 49,
+          "leakage_recall": 0.9038,
+          "detection_recall": 0.8654,
+          "false_block_rate": null,
+          "action_accuracy": 0.8776,
+          "protect_accuracy": 0.898,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.8776,
+          "latency_ms_p50": 384.83
+        },
+        "secret_tool_external": {
+          "n": 64,
+          "leakage_recall": 0.9697,
+          "detection_recall": 0.9697,
+          "false_block_rate": null,
+          "action_accuracy": 0.9688,
+          "protect_accuracy": 0.9688,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.9688,
+          "latency_ms_p50": 383.06
+        }
+      },
+      "by_lang": {
+        "de": {
+          "n": 266,
+          "leakage_recall": 0.7672,
+          "detection_recall": 0.8426,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8346,
+          "protect_accuracy": 0.8722,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 368.82
+        },
+        "en": {
+          "n": 1875,
+          "leakage_recall": 0.8826,
+          "detection_recall": 0.8989,
+          "false_block_rate": 0.0381,
+          "action_accuracy": 0.827,
+          "protect_accuracy": 0.8544,
+          "escalation_rate": 0.0149,
+          "stop_rate": 0.1493,
+          "latency_ms_p50": 364.11
+        },
+        "es": {
+          "n": 195,
+          "leakage_recall": 0.7623,
+          "detection_recall": 0.8226,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8667,
+          "protect_accuracy": 0.8667,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 370.16
+        },
+        "fr": {
+          "n": 186,
+          "leakage_recall": 0.7671,
+          "detection_recall": 0.8554,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8978,
+          "protect_accuracy": 0.8978,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 379.12
+        },
+        "hi": {
+          "n": 74,
+          "leakage_recall": 0.7431,
+          "detection_recall": 0.8073,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8784,
+          "protect_accuracy": 0.8919,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0135,
+          "latency_ms_p50": 445.07
+        },
+        "it": {
+          "n": 154,
+          "leakage_recall": 0.8255,
+          "detection_recall": 0.8774,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8831,
+          "protect_accuracy": 0.8831,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 380.58
+        },
+        "nl": {
+          "n": 64,
+          "leakage_recall": 0.7879,
+          "detection_recall": 0.8485,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.9375,
+          "protect_accuracy": 0.9375,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 368.1
+        },
+        "te": {
+          "n": 75,
+          "leakage_recall": 0.6,
+          "detection_recall": 0.6727,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8267,
+          "protect_accuracy": 0.8267,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 450.96
+        }
+      },
+      "by_direction": {
+        "prompt": {
+          "n": 2292,
+          "leakage_recall": 0.7993,
+          "detection_recall": 0.8603,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8339,
+          "protect_accuracy": 0.8591,
+          "escalation_rate": 0.0009,
+          "stop_rate": 0.0148,
+          "latency_ms_p50": 368.15
+        },
+        "response": {
+          "n": 279,
+          "leakage_recall": 0.8143,
+          "detection_recall": 0.8,
+          "false_block_rate": 0.1222,
+          "action_accuracy": 0.8817,
+          "protect_accuracy": 0.8889,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.1971,
+          "latency_ms_p50": 368.24
+        },
+        "tool_payload": {
+          "n": 318,
+          "leakage_recall": 0.9697,
+          "detection_recall": 0.9697,
+          "false_block_rate": 0.1898,
+          "action_accuracy": 0.8662,
+          "protect_accuracy": 0.8711,
+          "escalation_rate": 0.0818,
+          "stop_rate": 0.6038,
+          "latency_ms_p50": 378.4
+        }
+      },
+      "entity_recall": {
+        "PERSON": {
+          "n": 980,
+          "recall": 0.8745
+        },
+        "GOV_ID": {
+          "n": 193,
+          "recall": 0.3523
+        },
+        "PHONE": {
+          "n": 160,
+          "recall": 0.7438
+        },
+        "ADDRESS": {
+          "n": 151,
+          "recall": 0.7616
+        },
+        "EMAIL": {
+          "n": 137,
+          "recall": 0.8759
+        },
+        "PASSPORT": {
+          "n": 42,
+          "recall": 0.3095
+        },
+        "GITHUB_TOKEN": {
+          "n": 37,
+          "recall": 0.973
+        },
+        "GENERIC_SECRET": {
+          "n": 35,
+          "recall": 0.7429
+        },
+        "PRIVATE_KEY": {
+          "n": 30,
+          "recall": 1.0
+        },
+        "CREDIT_CARD": {
+          "n": 28,
+          "recall": 0.2143
+        },
+        "TELEGRAM_TOKEN": {
+          "n": 23,
+          "recall": 1.0
+        },
+        "DISCORD_TOKEN": {
+          "n": 21,
+          "recall": 1.0
+        },
+        "PASSWORD": {
+          "n": 20,
+          "recall": 0.85
+        },
+        "SLACK_WEBHOOK": {
+          "n": 18,
+          "recall": 1.0
+        },
+        "OPENAI_KEY": {
+          "n": 18,
+          "recall": 1.0
+        },
+        "AWS_ACCESS_KEY": {
+          "n": 17,
+          "recall": 1.0
+        },
+        "PYPI_TOKEN": {
+          "n": 17,
+          "recall": 1.0
+        },
+        "HF_TOKEN": {
+          "n": 16,
+          "recall": 1.0
+        },
+        "GITLAB_TOKEN": {
+          "n": 16,
+          "recall": 1.0
+        },
+        "AWS_SECRET_KEY": {
+          "n": 16,
+          "recall": 1.0
+        },
+        "JWT": {
+          "n": 15,
+          "recall": 1.0
+        },
+        "DIGITALOCEAN_TOKEN": {
+          "n": 15,
+          "recall": 1.0
+        },
+        "GCP_API_KEY": {
+          "n": 14,
+          "recall": 1.0
+        },
+        "SENDGRID_KEY": {
+          "n": 14,
+          "recall": 1.0
+        },
+        "SLACK_TOKEN": {
+          "n": 14,
+          "recall": 1.0
+        },
+        "ANTHROPIC_KEY": {
+          "n": 14,
+          "recall": 1.0
+        },
+        "SHOPIFY_TOKEN": {
+          "n": 14,
+          "recall": 1.0
+        },
+        "DATADOG_KEY": {
+          "n": 12,
+          "recall": 0.5833
+        },
+        "TWILIO_KEY": {
+          "n": 12,
+          "recall": 0.5833
+        },
+        "DB_CONNECTION_STRING": {
+          "n": 11,
+          "recall": 1.0
+        },
+        "NPM_TOKEN": {
+          "n": 11,
+          "recall": 1.0
+        },
+        "STRIPE_KEY": {
+          "n": 10,
+          "recall": 1.0
+        },
+        "BASIC_AUTH": {
+          "n": 10,
+          "recall": 1.0
+        },
+        "AZURE_STORAGE_KEY": {
+          "n": 9,
+          "recall": 1.0
+        }
+      },
+      "wall_s": 1234.1
+    },
+    "agent": {
+      "n": 600,
+      "leakage_recall": 0.8077,
+      "items_with_leak": 69,
+      "detection_precision": 0.645,
+      "detection_recall": 0.8303,
+      "false_block_rate": 0.049,
+      "over_redaction_rate": 0.1633,
+      "action_accuracy": 0.8079,
+      "protect_accuracy": 0.86,
+      "escalation_rate": 0.0167,
+      "stop_rate": 0.1517,
+      "latency_ms_p50": 1180.58,
+      "latency_ms_p95": 2263.93,
+      "latency_ms_p99": 2737.01,
+      "latency_ms_mean": 1380.37,
+      "detection_f1": 0.726,
+      "tool_success_rate": 1.0,
+      "tool_calls": 385,
+      "groundedness": 1.0,
+      "confusion": {
+        "allow": {
+          "allow": 193,
+          "redact": 40,
+          "escalate": 0,
+          "block": 12
+        },
+        "redact": {
+          "allow": 16,
+          "redact": 225,
+          "escalate": 4,
+          "block": 16
+        },
+        "escalate": {
+          "allow": 0,
+          "redact": 0,
+          "escalate": 0,
+          "block": 0
+        },
+        "block": {
+          "allow": 10,
+          "redact": 12,
+          "escalate": 2,
+          "block": 53
+        }
+      },
+      "by_scenario": {
+        "benign_prompt": {
+          "n": 12,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.75,
+          "protect_accuracy": 0.75,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 1451.44
+        },
+        "code_api_key": {
+          "n": 5,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.8,
+          "protect_accuracy": 0.8,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.8,
+          "latency_ms_p50": 470.23
+        },
+        "code_connection_string": {
+          "n": 4,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.5,
+          "protect_accuracy": 0.5,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.5,
+          "latency_ms_p50": 1315.67
+        },
+        "code_internal_url": {
+          "n": 3,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0,
+          "action_accuracy": 1.0,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 1400.95
+        },
+        "code_multi_secret": {
+          "n": 4,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 1.0,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 1.0,
+          "latency_ms_p50": 655.45
+        },
+        "code_password_secret": {
+          "n": 5,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 1.0,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 1.0,
+          "latency_ms_p50": 542.56
+        },
+        "code_pii": {
+          "n": 4,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": null,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 1.0,
+          "stop_rate": 1.0,
+          "latency_ms_p50": 508.86
+        },
+        "code_private_key_keystore": {
+          "n": 3,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 1.0,
+          "protect_accuracy": 1.0,
+          "escalation_rate": 0.0,
+          "stop_rate": 1.0,
+          "latency_ms_p50": 1203.72
+        },
+        "injection": {
+          "n": 12,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.1667,
+          "protect_accuracy": 0.6667,
+          "escalation_rate": 0.0833,
+          "stop_rate": 0.25,
+          "latency_ms_p50": 1402.16
+        },
+        "negative_prompt": {
+          "n": 130,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0077,
+          "action_accuracy": 0.8231,
+          "protect_accuracy": 0.8231,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0077,
+          "latency_ms_p50": 1114.05
+        },
+        "negative_response": {
+          "n": 16,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.3125,
+          "action_accuracy": 0.6875,
+          "protect_accuracy": 0.6875,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.3125,
+          "latency_ms_p50": 1032.4
+        },
+        "negative_tool_external": {
+          "n": 26,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.1154,
+          "action_accuracy": 0.8846,
+          "protect_accuracy": 0.8846,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.1154,
+          "latency_ms_p50": 1143.19
+        },
+        "pii_internal_llm": {
+          "n": 25,
+          "leakage_recall": 0.1212,
+          "detection_recall": 0.7273,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.6,
+          "protect_accuracy": 0.68,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.08,
+          "latency_ms_p50": 1801.76
+        },
+        "pii_prompt": {
+          "n": 193,
+          "leakage_recall": 0.8614,
+          "detection_recall": 0.839,
+          "false_block_rate": 0.1111,
+          "action_accuracy": 0.8446,
+          "protect_accuracy": 0.9016,
+          "escalation_rate": 0.0155,
+          "stop_rate": 0.0725,
+          "latency_ms_p50": 1280.04
+        },
+        "pii_response": {
+          "n": 32,
+          "leakage_recall": 0.7333,
+          "detection_recall": 0.7333,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.9062,
+          "protect_accuracy": 0.9062,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 483.74
+        },
+        "policy_benign": {
+          "n": 12,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.9167,
+          "protect_accuracy": 0.9167,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 1127.33
+        },
+        "policy_jailbreak": {
+          "n": 13,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": 0.3846,
+          "protect_accuracy": 0.9231,
+          "escalation_rate": 0.0769,
+          "stop_rate": 0.4615,
+          "latency_ms_p50": 1188.69
+        },
+        "policy_sensitive": {
+          "n": 13,
+          "leakage_recall": null,
+          "detection_recall": null,
+          "false_block_rate": null,
+          "action_accuracy": null,
+          "protect_accuracy": 0.5385,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0,
+          "latency_ms_p50": 1077.65
+        },
+        "secret_prompt": {
+          "n": 65,
+          "leakage_recall": 0.9296,
+          "detection_recall": 0.9014,
+          "false_block_rate": null,
+          "action_accuracy": 0.8462,
+          "protect_accuracy": 0.9538,
+          "escalation_rate": 0.0154,
+          "stop_rate": 0.2308,
+          "latency_ms_p50": 1114.16
+        },
+        "secret_response": {
+          "n": 10,
+          "leakage_recall": 0.9167,
+          "detection_recall": 0.75,
+          "false_block_rate": null,
+          "action_accuracy": 0.8,
+          "protect_accuracy": 0.9,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.8,
+          "latency_ms_p50": 524.04
+        },
+        "secret_tool_external": {
+          "n": 13,
+          "leakage_recall": 0.9286,
+          "detection_recall": 0.9286,
+          "false_block_rate": null,
+          "action_accuracy": 0.9231,
+          "protect_accuracy": 0.9231,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.9231,
+          "latency_ms_p50": 683.67
+        }
+      },
+      "by_lang": {
+        "de": {
+          "n": 56,
+          "leakage_recall": 0.6866,
+          "detection_recall": 0.8209,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.7857,
+          "protect_accuracy": 0.8571,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0893,
+          "latency_ms_p50": 1294.07
+        },
+        "en": {
+          "n": 395,
+          "leakage_recall": 0.8876,
+          "detection_recall": 0.8757,
+          "false_block_rate": 0.0488,
+          "action_accuracy": 0.8095,
+          "protect_accuracy": 0.8557,
+          "escalation_rate": 0.0203,
+          "stop_rate": 0.1899,
+          "latency_ms_p50": 1113.27
+        },
+        "es": {
+          "n": 33,
+          "leakage_recall": 0.6889,
+          "detection_recall": 0.7778,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8182,
+          "protect_accuracy": 0.8485,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.0303,
+          "latency_ms_p50": 1186.5
+        },
+        "fr": {
+          "n": 40,
+          "leakage_recall": 0.7234,
+          "detection_recall": 0.7447,
+          "false_block_rate": 0.2222,
+          "action_accuracy": 0.775,
+          "protect_accuracy": 0.8,
+          "escalation_rate": 0.025,
+          "stop_rate": 0.075,
+          "latency_ms_p50": 1292.61
+        },
+        "hi": {
+          "n": 8,
+          "leakage_recall": 0.6667,
+          "detection_recall": 0.75,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.75,
+          "protect_accuracy": 0.875,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.125,
+          "latency_ms_p50": 1937.54
+        },
+        "it": {
+          "n": 33,
+          "leakage_recall": 0.8776,
+          "detection_recall": 0.898,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8485,
+          "protect_accuracy": 0.9091,
+          "escalation_rate": 0.0303,
+          "stop_rate": 0.0606,
+          "latency_ms_p50": 1325.72
+        },
+        "nl": {
+          "n": 16,
+          "leakage_recall": 0.96,
+          "detection_recall": 0.92,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8125,
+          "protect_accuracy": 0.9375,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.125,
+          "latency_ms_p50": 1191.6
+        },
+        "te": {
+          "n": 19,
+          "leakage_recall": 0.75,
+          "detection_recall": 0.6429,
+          "false_block_rate": 0.0,
+          "action_accuracy": 0.8421,
+          "protect_accuracy": 0.9474,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.1053,
+          "latency_ms_p50": 1307.44
+        }
+      },
+      "by_direction": {
+        "prompt": {
+          "n": 475,
+          "leakage_recall": 0.8086,
+          "detection_recall": 0.841,
+          "false_block_rate": 0.0202,
+          "action_accuracy": 0.7944,
+          "protect_accuracy": 0.8568,
+          "escalation_rate": 0.0126,
+          "stop_rate": 0.0863,
+          "latency_ms_p50": 1232.28
+        },
+        "response": {
+          "n": 58,
+          "leakage_recall": 0.7719,
+          "detection_recall": 0.7368,
+          "false_block_rate": 0.2778,
+          "action_accuracy": 0.8276,
+          "protect_accuracy": 0.8448,
+          "escalation_rate": 0.0,
+          "stop_rate": 0.2241,
+          "latency_ms_p50": 541.91
+        },
+        "tool_payload": {
+          "n": 67,
+          "leakage_recall": 0.9286,
+          "detection_recall": 0.9286,
+          "false_block_rate": 0.1034,
+          "action_accuracy": 0.8889,
+          "protect_accuracy": 0.8955,
+          "escalation_rate": 0.0597,
+          "stop_rate": 0.5522,
+          "latency_ms_p50": 937.49
+        }
+      },
+      "entity_recall": {
+        "PERSON": {
+          "n": 200,
+          "recall": 0.9
+        },
+        "GOV_ID": {
+          "n": 49,
+          "recall": 0.3878
+        },
+        "PHONE": {
+          "n": 40,
+          "recall": 0.775
+        },
+        "ADDRESS": {
+          "n": 26,
+          "recall": 0.7692
+        },
+        "EMAIL": {
+          "n": 19,
+          "recall": 0.8421
+        },
+        "GITHUB_TOKEN": {
+          "n": 8,
+          "recall": 1.0
+        },
+        "CREDIT_CARD": {
+          "n": 7,
+          "recall": 0.0
+        },
+        "AWS_SECRET_KEY": {
+          "n": 6,
+          "recall": 1.0
+        },
+        "GENERIC_SECRET": {
+          "n": 6,
+          "recall": 0.8333
+        },
+        "PASSWORD": {
+          "n": 6,
+          "recall": 0.8333
+        },
+        "OPENAI_KEY": {
+          "n": 6,
+          "recall": 1.0
+        },
+        "ANTHROPIC_KEY": {
+          "n": 5,
+          "recall": 1.0
+        },
+        "HF_TOKEN": {
+          "n": 5,
+          "recall": 1.0
+        },
+        "DB_CONNECTION_STRING": {
+          "n": 5,
+          "recall": 1.0
+        },
+        "TWILIO_KEY": {
+          "n": 5,
+          "recall": 0.4
+        },
+        "PRIVATE_KEY": {
+          "n": 4,
+          "recall": 1.0
+        },
+        "PASSPORT": {
+          "n": 4,
+          "recall": 0.25
+        },
+        "PYPI_TOKEN": {
+          "n": 4,
+          "recall": 1.0
+        },
+        "DATADOG_KEY": {
+          "n": 4,
+          "recall": 0.5
+        },
+        "SLACK_TOKEN": {
+          "n": 4,
+          "recall": 1.0
+        },
+        "SLACK_WEBHOOK": {
+          "n": 3,
+          "recall": 1.0
+        },
+        "GCP_API_KEY": {
+          "n": 3,
+          "recall": 1.0
+        },
+        "SENDGRID_KEY": {
+          "n": 3,
+          "recall": 1.0
+        },
+        "NPM_TOKEN": {
+          "n": 3,
+          "recall": 1.0
+        },
+        "AWS_ACCESS_KEY": {
+          "n": 3,
+          "recall": 1.0
+        },
+        "SHOPIFY_TOKEN": {
+          "n": 2,
+          "recall": 1.0
+        },
+        "DISCORD_TOKEN": {
+          "n": 2,
+          "recall": 1.0
+        },
+        "BASIC_AUTH": {
+          "n": 2,
+          "recall": 1.0
+        },
+        "GITLAB_TOKEN": {
+          "n": 2,
+          "recall": 1.0
+        },
+        "JWT": {
+          "n": 2,
+          "recall": 1.0
+        },
+        "STRIPE_KEY": {
+          "n": 1,
+          "recall": 1.0
+        },
+        "TELEGRAM_TOKEN": {
+          "n": 1,
+          "recall": 1.0
+        },
+        "DIGITALOCEAN_TOKEN": {
+          "n": 1,
+          "recall": 1.0
+        },
+        "AZURE_STORAGE_KEY": {
+          "n": 1,
+          "recall": 1.0
+        }
+      },
+      "wall_s": 598.8
+    }
+  },
+  "paired": {
+    "n": 600,
+    "systems": {
+      "rules": {
+        "n": 600,
+        "leakage_recall": 0.2466,
+        "items_with_leak": 221,
+        "detection_precision": 0.6768,
+        "detection_recall": 0.2511,
+        "false_block_rate": 0.0163,
+        "over_redaction_rate": 0.0694,
+        "action_accuracy": 0.578,
+        "protect_accuracy": 0.575,
+        "escalation_rate": 0.0033,
+        "stop_rate": 0.08,
+        "latency_ms_p50": 0.19,
+        "latency_ms_p95": 0.42,
+        "latency_ms_p99": 1.16,
+        "latency_ms_mean": 0.23,
+        "detection_f1": 0.3663,
+        "groundedness": 1.0,
+        "by_scenario": {
+          "benign_prompt": {
+            "n": 12,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0,
+            "action_accuracy": 1.0,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 0.14
+          },
+          "code_api_key": {
+            "n": 5,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.8,
+            "protect_accuracy": 0.8,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.8,
+            "latency_ms_p50": 0.29
+          },
+          "code_connection_string": {
+            "n": 4,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.5,
+            "protect_accuracy": 0.5,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.5,
+            "latency_ms_p50": 0.31
+          },
+          "code_internal_url": {
+            "n": 3,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0,
+            "action_accuracy": 1.0,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 0.17
+          },
+          "code_multi_secret": {
+            "n": 4,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 1.0,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 1.0,
+            "latency_ms_p50": 0.58
+          },
+          "code_password_secret": {
+            "n": 5,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.8,
+            "protect_accuracy": 0.8,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.8,
+            "latency_ms_p50": 0.26
+          },
+          "code_pii": {
+            "n": 4,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": null,
+            "protect_accuracy": 0.5,
+            "escalation_rate": 0.5,
+            "stop_rate": 0.5,
+            "latency_ms_p50": 0.21
+          },
+          "code_private_key_keystore": {
+            "n": 3,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.3333,
+            "protect_accuracy": 0.3333,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.3333,
+            "latency_ms_p50": 0.25
+          },
+          "injection": {
+            "n": 12,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.0,
+            "protect_accuracy": 0.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 0.17
+          },
+          "negative_prompt": {
+            "n": 130,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.8692,
+            "protect_accuracy": 0.8692,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 0.15
+          },
+          "negative_response": {
+            "n": 16,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0625,
+            "action_accuracy": 0.9375,
+            "protect_accuracy": 0.9375,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0625,
+            "latency_ms_p50": 0.13
+          },
+          "negative_tool_external": {
+            "n": 26,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.1154,
+            "action_accuracy": 0.8846,
+            "protect_accuracy": 0.8846,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.1154,
+            "latency_ms_p50": 0.16
+          },
+          "pii_internal_llm": {
+            "n": 25,
+            "leakage_recall": 0.0,
+            "detection_recall": 0.1515,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.68,
+            "protect_accuracy": 0.68,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 0.21
+          },
+          "pii_prompt": {
+            "n": 193,
+            "leakage_recall": 0.0787,
+            "detection_recall": 0.0787,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.2435,
+            "protect_accuracy": 0.2435,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 0.21
+          },
+          "pii_response": {
+            "n": 32,
+            "leakage_recall": 0.0889,
+            "detection_recall": 0.0889,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.1875,
+            "protect_accuracy": 0.1875,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 0.21
+          },
+          "policy_benign": {
+            "n": 12,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0,
+            "action_accuracy": 1.0,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 0.13
+          },
+          "policy_jailbreak": {
+            "n": 13,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.0,
+            "protect_accuracy": 0.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 0.19
+          },
+          "policy_sensitive": {
+            "n": 13,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": null,
+            "protect_accuracy": 0.3077,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 0.14
+          },
+          "secret_prompt": {
+            "n": 65,
+            "leakage_recall": 0.8732,
+            "detection_recall": 0.8592,
+            "false_block_rate": null,
+            "action_accuracy": 0.8615,
+            "protect_accuracy": 0.8769,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.1385,
+            "latency_ms_p50": 0.25
+          },
+          "secret_response": {
+            "n": 10,
+            "leakage_recall": 0.8333,
+            "detection_recall": 0.6667,
+            "false_block_rate": null,
+            "action_accuracy": 0.7,
+            "protect_accuracy": 0.8,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.7,
+            "latency_ms_p50": 0.24
+          },
+          "secret_tool_external": {
+            "n": 13,
+            "leakage_recall": 0.8571,
+            "detection_recall": 0.8571,
+            "false_block_rate": null,
+            "action_accuracy": 0.8462,
+            "protect_accuracy": 0.8462,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.8462,
+            "latency_ms_p50": 0.24
+          }
+        }
+      },
+      "gliner_base": {
+        "n": 600,
+        "leakage_recall": 0.7851,
+        "items_with_leak": 77,
+        "detection_precision": 0.645,
+        "detection_recall": 0.8303,
+        "false_block_rate": 0.0327,
+        "over_redaction_rate": 0.1714,
+        "action_accuracy": 0.8285,
+        "protect_accuracy": 0.855,
+        "escalation_rate": 0.0067,
+        "stop_rate": 0.0983,
+        "latency_ms_p50": 368.6,
+        "latency_ms_p95": 486.59,
+        "latency_ms_p99": 1235.94,
+        "latency_ms_mean": 394.79,
+        "detection_f1": 0.726,
+        "groundedness": 1.0,
+        "by_scenario": {
+          "benign_prompt": {
+            "n": 12,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.75,
+            "protect_accuracy": 0.75,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 337.0
+          },
+          "code_api_key": {
+            "n": 5,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.8,
+            "protect_accuracy": 0.8,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.8,
+            "latency_ms_p50": 399.68
+          },
+          "code_connection_string": {
+            "n": 4,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.5,
+            "protect_accuracy": 0.5,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.5,
+            "latency_ms_p50": 425.46
+          },
+          "code_internal_url": {
+            "n": 3,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0,
+            "action_accuracy": 1.0,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 390.11
+          },
+          "code_multi_secret": {
+            "n": 4,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 1.0,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 1.0,
+            "latency_ms_p50": 604.94
+          },
+          "code_password_secret": {
+            "n": 5,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 1.0,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 1.0,
+            "latency_ms_p50": 393.06
+          },
+          "code_pii": {
+            "n": 4,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": null,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 1.0,
+            "stop_rate": 1.0,
+            "latency_ms_p50": 360.16
+          },
+          "code_private_key_keystore": {
+            "n": 3,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 1.0,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 1.0,
+            "latency_ms_p50": 457.81
+          },
+          "injection": {
+            "n": 12,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.0,
+            "protect_accuracy": 0.5,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 370.7
+          },
+          "negative_prompt": {
+            "n": 130,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.8231,
+            "protect_accuracy": 0.8231,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 352.56
+          },
+          "negative_response": {
+            "n": 16,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.3125,
+            "action_accuracy": 0.6875,
+            "protect_accuracy": 0.6875,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.3125,
+            "latency_ms_p50": 354.92
+          },
+          "negative_tool_external": {
+            "n": 26,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.1154,
+            "action_accuracy": 0.8846,
+            "protect_accuracy": 0.8846,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.1154,
+            "latency_ms_p50": 360.95
+          },
+          "pii_internal_llm": {
+            "n": 25,
+            "leakage_recall": 0.0303,
+            "detection_recall": 0.7273,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.64,
+            "protect_accuracy": 0.64,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 377.4
+          },
+          "pii_prompt": {
+            "n": 193,
+            "leakage_recall": 0.839,
+            "detection_recall": 0.839,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.9067,
+            "protect_accuracy": 0.9067,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 374.55
+          },
+          "pii_response": {
+            "n": 32,
+            "leakage_recall": 0.7333,
+            "detection_recall": 0.7333,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.9062,
+            "protect_accuracy": 0.9062,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 368.66
+          },
+          "policy_benign": {
+            "n": 12,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.9167,
+            "protect_accuracy": 0.9167,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 347.64
+          },
+          "policy_jailbreak": {
+            "n": 13,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.0,
+            "protect_accuracy": 0.8462,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 363.93
+          },
+          "policy_sensitive": {
+            "n": 13,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": null,
+            "protect_accuracy": 0.5385,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 336.04
+          },
+          "secret_prompt": {
+            "n": 65,
+            "leakage_recall": 0.9155,
+            "detection_recall": 0.9014,
+            "false_block_rate": null,
+            "action_accuracy": 0.9385,
+            "protect_accuracy": 0.9538,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.1385,
+            "latency_ms_p50": 378.09
+          },
+          "secret_response": {
+            "n": 10,
+            "leakage_recall": 0.9167,
+            "detection_recall": 0.75,
+            "false_block_rate": null,
+            "action_accuracy": 0.8,
+            "protect_accuracy": 0.9,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.8,
+            "latency_ms_p50": 391.22
+          },
+          "secret_tool_external": {
+            "n": 13,
+            "leakage_recall": 0.9286,
+            "detection_recall": 0.9286,
+            "false_block_rate": null,
+            "action_accuracy": 0.9231,
+            "protect_accuracy": 0.9231,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.9231,
+            "latency_ms_p50": 383.06
+          }
+        }
+      },
+      "agent": {
+        "n": 600,
+        "leakage_recall": 0.8077,
+        "items_with_leak": 69,
+        "detection_precision": 0.645,
+        "detection_recall": 0.8303,
+        "false_block_rate": 0.049,
+        "over_redaction_rate": 0.1633,
+        "action_accuracy": 0.8079,
+        "protect_accuracy": 0.86,
+        "escalation_rate": 0.0167,
+        "stop_rate": 0.1517,
+        "latency_ms_p50": 1180.58,
+        "latency_ms_p95": 2263.93,
+        "latency_ms_p99": 2737.01,
+        "latency_ms_mean": 1380.37,
+        "detection_f1": 0.726,
+        "tool_success_rate": 1.0,
+        "tool_calls": 385,
+        "groundedness": 1.0,
+        "by_scenario": {
+          "benign_prompt": {
+            "n": 12,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.75,
+            "protect_accuracy": 0.75,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 1451.44
+          },
+          "code_api_key": {
+            "n": 5,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.8,
+            "protect_accuracy": 0.8,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.8,
+            "latency_ms_p50": 470.23
+          },
+          "code_connection_string": {
+            "n": 4,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.5,
+            "protect_accuracy": 0.5,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.5,
+            "latency_ms_p50": 1315.67
+          },
+          "code_internal_url": {
+            "n": 3,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0,
+            "action_accuracy": 1.0,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 1400.95
+          },
+          "code_multi_secret": {
+            "n": 4,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 1.0,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 1.0,
+            "latency_ms_p50": 655.45
+          },
+          "code_password_secret": {
+            "n": 5,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 1.0,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 1.0,
+            "latency_ms_p50": 542.56
+          },
+          "code_pii": {
+            "n": 4,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": null,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 1.0,
+            "stop_rate": 1.0,
+            "latency_ms_p50": 508.86
+          },
+          "code_private_key_keystore": {
+            "n": 3,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 1.0,
+            "protect_accuracy": 1.0,
+            "escalation_rate": 0.0,
+            "stop_rate": 1.0,
+            "latency_ms_p50": 1203.72
+          },
+          "injection": {
+            "n": 12,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.1667,
+            "protect_accuracy": 0.6667,
+            "escalation_rate": 0.0833,
+            "stop_rate": 0.25,
+            "latency_ms_p50": 1402.16
+          },
+          "negative_prompt": {
+            "n": 130,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0077,
+            "action_accuracy": 0.8231,
+            "protect_accuracy": 0.8231,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0077,
+            "latency_ms_p50": 1114.05
+          },
+          "negative_response": {
+            "n": 16,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.3125,
+            "action_accuracy": 0.6875,
+            "protect_accuracy": 0.6875,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.3125,
+            "latency_ms_p50": 1032.4
+          },
+          "negative_tool_external": {
+            "n": 26,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.1154,
+            "action_accuracy": 0.8846,
+            "protect_accuracy": 0.8846,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.1154,
+            "latency_ms_p50": 1143.19
+          },
+          "pii_internal_llm": {
+            "n": 25,
+            "leakage_recall": 0.1212,
+            "detection_recall": 0.7273,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.6,
+            "protect_accuracy": 0.68,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.08,
+            "latency_ms_p50": 1801.76
+          },
+          "pii_prompt": {
+            "n": 193,
+            "leakage_recall": 0.8614,
+            "detection_recall": 0.839,
+            "false_block_rate": 0.1111,
+            "action_accuracy": 0.8446,
+            "protect_accuracy": 0.9016,
+            "escalation_rate": 0.0155,
+            "stop_rate": 0.0725,
+            "latency_ms_p50": 1280.04
+          },
+          "pii_response": {
+            "n": 32,
+            "leakage_recall": 0.7333,
+            "detection_recall": 0.7333,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.9062,
+            "protect_accuracy": 0.9062,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 483.74
+          },
+          "policy_benign": {
+            "n": 12,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": 0.0,
+            "action_accuracy": 0.9167,
+            "protect_accuracy": 0.9167,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 1127.33
+          },
+          "policy_jailbreak": {
+            "n": 13,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": 0.3846,
+            "protect_accuracy": 0.9231,
+            "escalation_rate": 0.0769,
+            "stop_rate": 0.4615,
+            "latency_ms_p50": 1188.69
+          },
+          "policy_sensitive": {
+            "n": 13,
+            "leakage_recall": null,
+            "detection_recall": null,
+            "false_block_rate": null,
+            "action_accuracy": null,
+            "protect_accuracy": 0.5385,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.0,
+            "latency_ms_p50": 1077.65
+          },
+          "secret_prompt": {
+            "n": 65,
+            "leakage_recall": 0.9296,
+            "detection_recall": 0.9014,
+            "false_block_rate": null,
+            "action_accuracy": 0.8462,
+            "protect_accuracy": 0.9538,
+            "escalation_rate": 0.0154,
+            "stop_rate": 0.2308,
+            "latency_ms_p50": 1114.16
+          },
+          "secret_response": {
+            "n": 10,
+            "leakage_recall": 0.9167,
+            "detection_recall": 0.75,
+            "false_block_rate": null,
+            "action_accuracy": 0.8,
+            "protect_accuracy": 0.9,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.8,
+            "latency_ms_p50": 524.04
+          },
+          "secret_tool_external": {
+            "n": 13,
+            "leakage_recall": 0.9286,
+            "detection_recall": 0.9286,
+            "false_block_rate": null,
+            "action_accuracy": 0.9231,
+            "protect_accuracy": 0.9231,
+            "escalation_rate": 0.0,
+            "stop_rate": 0.9231,
+            "latency_ms_p50": 683.67
+          }
+        }
+      }
+    }
+  }
+}
